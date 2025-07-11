@@ -1,0 +1,73 @@
+AGE...
+#include <stdio.h>
+int main() {
+    int age, ageResult;
+    printf("Enter the age: ");
+    scanf("%d", &age);
+    if (age < 0 || age > 101) {
+        ageResult = -1;
+    } else if (age >= 0 && age <= 5) {
+        ageResult = 0;
+    } else if (age >= 6 && age <= 12) {
+        ageResult = 1;
+    } else if (age >= 13 && age <= 19) {
+        ageResult = 2;
+    } else if (age >= 20 && age <= 50) {
+        ageResult = 3;
+    } else if (age >= 51 && age <= 60) {
+        ageResult = 4;
+    } else { 
+        ageResult = 5;
+    }
+    printf("ageResult = %d\n", ageResult);
+    return 0;
+}
+
+
+square
+#include <stdio.h>
+
+int main() {
+    int sqdnumber = 234; // You can change this to any number
+    int sqdNumber_result = 0;
+    int temp = sqdnumber;
+    while (temp > 0) {
+        int digit = temp % 10;
+        sqdNumber_result += digit * digit;
+        temp /= 10;
+    }
+    printf("Sum of squares of digits of %d is %d\n", sqdnumber, sqdNumber_result);
+    return 0;
+}
+
+
+
+HAPPY NUMBER
+
+#include <stdio.h>
+
+int main() {
+    int number = 19;
+    int result = number;
+    int i, digit;
+
+    for (i = 1; i <= 10; i++) {
+        int sum = 0;
+        while (result > 0) {
+            digit = result % 10;
+            sum += digit * digit;
+            result /= 10;
+        }
+        result = sum;
+        printf("Cycle %d: %d\n", i, result);
+        if (result == 1) {
+            printf("%d is a Happy Number\n", number);
+            return 0;
+        }
+    }
+
+    printf("%d is NOT a Happy Number (after 10 cycles)\n", number);
+    return 0;
+}
+
+
